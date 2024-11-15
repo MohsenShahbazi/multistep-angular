@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class SubmitInformationService {
-  private apiUrl = 'https://example.com/api/submit';
+  private apiUrl = 'http://localhost:8080/api/';
 
   constructor(private http: HttpClient) {}
 
   submitForm(data: any): Observable<any> {
-    return this.http.post(this.apiUrl, data);
+    return this.http.post(this.apiUrl+'submit', data);
   }
 }
