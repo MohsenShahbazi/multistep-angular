@@ -1,0 +1,18 @@
+<div class="review-container">
+  <h2>Review Information</h2>
+  <div class="review-item">
+    <h3>Personal Information</h3>
+    <p><strong>First Name:</strong> {{ formData.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ formData.lastName }}</p>
+    <p><strong>National Code:</strong> {{ formData.nationalCode }}</p>
+  </div>
+
+  <div class="review-item">
+    <h3>Contact Information</h3>
+    <p><strong>Province:</strong> {{ formData.province }}</p>
+    <p><strong>City:</strong> {{ formData.city }}</p>
+    <p><strong>Address:</strong> {{ formData.address }}</p>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+</div>

@@ -1,0 +1,22 @@
+<!--
+<div class="upload-section">
+  <h3>Upload Document</h3>
+  <input type="file" (change)="onFileSelected($event)" />
+  <button mat-raised-button color="primary" (click)="onSave()" [disabled]="!selectedFile">
+    Save
+  </button>
+</div>
+-->
+
+
+<div class="upload-document-container">
+  <h2>Upload Document</h2>
+  <form (ngSubmit)="onSave()">
+    <mat-form-field appearance="outline">
+      <mat-label>Document</mat-label>
+      <input matInput type="file" (change)="onFileSelected($event)" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Next</button>
+  </form>
+</div>

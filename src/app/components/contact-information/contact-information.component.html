@@ -1,0 +1,30 @@
+<div class="contact-info-container">
+  <h2>Contact Information</h2>
+  <form [formGroup]="form" (ngSubmit)="onSave()">
+    <mat-form-field appearance="outline">
+      <mat-label>Province</mat-label>
+      <input matInput formControlName="province" required />
+      <mat-error *ngIf="form.controls['province'].invalid">
+        Province is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>City</mat-label>
+      <input matInput formControlName="city" required />
+      <mat-error *ngIf="form.controls['city'].invalid">
+        City is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <textarea matInput formControlName="address" required></textarea>
+      <mat-error *ngIf="form.controls['address'].invalid">
+        Address is required
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Next</button>
+  </form>
+</div>

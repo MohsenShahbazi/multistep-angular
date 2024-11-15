@@ -1,0 +1,30 @@
+<div class="personal-info-container">
+  <h2>Personal Information</h2>
+  <form [formGroup]="form" (ngSubmit)="onSave()">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" required />
+      <mat-error *ngIf="form.controls['firstName'].invalid">
+        First Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" required />
+      <mat-error *ngIf="form.controls['lastName'].invalid">
+        Last Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>National Code</mat-label>
+      <input matInput formControlName="nationalCode" required />
+      <mat-error *ngIf="form.controls['nationalCode'].invalid">
+        National Code is required
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Next</button>
+  </form>
+</div>

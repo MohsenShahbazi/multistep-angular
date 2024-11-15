@@ -1,0 +1,36 @@
+<div class="form-container">
+  <!-- Step Indicator -->
+  <h2>Step {{ currentStep }} of 4</h2>
+
+  <!-- Step Components -->
+  <app-personal-information
+    *ngIf="currentStep === 1"
+    (save)="formData.personalInfo = $event; nextStep()"
+  ></app-personal-information>
+
+  <app-upload-document
+    *ngIf="currentStep === 2"
+    (save)="formData.document = $event; nextStep()"
+  ></app-upload-document>
+
+  <app-contact-information
+    *ngIf="currentStep === 3"
+    (save)="formData.contactInfo = $event; nextStep()"
+  ></app-contact-information>
+
+  <app-review
+    *ngIf="currentStep === 4"
+    [formData]="formData"
+    (submit)="onSubmit()"
+  ></app-review>
+
+  <!-- Navigation Buttons -->
+  <div class="navigation-buttons">
+    <button
+      mat-raised-button
+      color="primary"
+      *ngIf="currentStep > 1"
+      (click)="previousStep()"
+    ></button>
+  </div>
+</div>
